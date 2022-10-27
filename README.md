@@ -2,7 +2,7 @@
 Freebie Alert is a web app where students can share information about giveaways/free merch events around campus. 
 
 ## How to run the app
-Ruby version:
+Ruby version: 3.1.2
 
 Machine OS: Mac
 
