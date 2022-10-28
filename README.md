@@ -12,3 +12,5 @@ Branch to grade: iteration1
 ## How to run the app
 `git clone https://github.com/rachelkyuli36/freebie-alert.git`
 
+`git checkout iteration1`
+
