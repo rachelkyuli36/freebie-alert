@@ -10,5 +10,5 @@ Machine OS: Mac
 Branch to grade: iteration1
 
 ## How to run the app
-`git clone `
+`git clone https://github.com/rachelkyuli36/freebie-alert.git`
 
