@@ -1,5 +1,5 @@
 <!--  This file is app/views/movies/index.html.erb -->
-<h2>All Movies</h2>
+<h2>All Events</h2>
 
 <%#  Part 2: Start here... %>
 
@@ -20,7 +20,7 @@
   <thead>
     <tr>
       <th>
-        <%= link_to 'Movie Title', movies_path({sort_by: 'title', ratings: @ratings_to_show_hash}),
+        <%= link_to 'Event Title', movies_path({sort_by: 'title', ratings: @ratings_to_show_hash}),
                       id: 'title_header', class: ('bg-warning hilite' if @sort_by == 'title') %>
       </th>
       <th>Rating</th>
