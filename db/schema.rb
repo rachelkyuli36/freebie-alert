@@ -13,9 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20111119180638) do
 
-  create_table "post", force: :cascade do |t|
+  create_table "movies", force: :cascade do |t|
     t.string   "title"
-    t.string   "type"
+    t.string   "rating"
     t.text     "description"
     t.text     "affiliation"
     t.datetime "event_date"
