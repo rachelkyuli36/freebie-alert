@@ -1,16 +1,16 @@
 # Add a declarative step here for populating the DB with movies.
 
-Given /the following posts exist/ do |posts_table|
-  posts_table.hashes.each do |post|
+Given /the following events exist/ do |events_table|
+  events_table.hashes.each do |event|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
-    Post.create(:title => post['title'], :type => post['type'], :event_date => post['event_date'], :date_posted => post['date_posted'])
+    Event.create(:title => event['title'], :rating => event['rating'], :event_date => event['event_date'])
   end
   #pending "Fill in this step in movie_steps.rb"
 end
 
-Then /(.*) seed posts should exist/ do | n_seeds |
-  expect(Post.count).to eq n_seeds.to_i
+Then /(.*) seed events should exist/ do | n_seeds |
+  expect(Event.count).to eq n_seeds.to_i
 end
 
 # Make sure that one string (regexp) occurs before or after another one
@@ -26,32 +26,32 @@ end
 #  "When I uncheck the following ratings: PG, G, R"
 #  "When I check the following ratings: G"
 
-When /I (un)?check the following types: (.*)/ do |uncheck, types_list|
+When /I (un)?check the following types: (.*)/ do |uncheck, ratings_list|
   # HINT: use String#split to split up the rating_list, then
   #   iterate over the ratings and reuse the "When I check..." or
   #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
-  types = types_list.split(', ')
-  types.each do |type|
-    uncheck ? uncheck(type) : check(type)
+  ratings = ratings_list.split(', ')
+  ratings.each do |rating|
+    uncheck ? uncheck(rating) : check(rating)
   end
 end
 
 # Part 2, Step 3
-Then /^I should (not )?see the following posts: (.*)$/ do |no, post_list|
+Then /^I should (not )?see the following events: (.*)$/ do |no, event_list|
   # Take a look at web_steps.rb Then /^(?:|I )should see "([^"]*)"$/
-  posts = post_list.split(', ')
-  posts.each do |post|
+  events = event_list.split(', ')
+  events.each do |event|
     if no 
-      expect(page).not_to have_content(post)
+      expect(page).not_to have_content(event)
     else
-      expect(page).to have_content(post)
+      expect(page).to have_content(event)
     end
   end
 end
 
-Then /I should see all the posts/ do
+Then /I should see all the events/ do
   # Make sure that all the movies in the app are visible in the table
-  expect(page).to have_selector("tr", count: Post.count + 1)
+  expect(page).to have_selector("tr", count: Event.count + 1)
 end
 
 ### Utility Steps Just for this assignment.
@@ -77,5 +77,5 @@ Then /complete the rest of of this scenario/ do
 end
 
 Then /the event date of "(.*)" should be "(.*)"/ do |t, d|
-  expect Post.find_by_title(t).event_date == d
+  expect Event.find_by_title(t).event_date == d
 end
