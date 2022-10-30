@@ -18,11 +18,5 @@ Branch to grade: iteration1
 
 `bin/rake db:setup`
 
-# On Codio
 
-`rails server -b 0.0.0.0`
-
-Click on Box URL botton on top
-
-# Locally
-
+## Heroku
