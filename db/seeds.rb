@@ -1,6 +1,7 @@
 
 # title, event_date, release_date, date_posted_type
 
+<<<<<<< HEAD
 movies = [
   { title: 'Waterbottles on Lerner Ramps', rating: 'MERCH', event_date: '2020-10-20'},
   { title: 'Mochi Mingle', rating: 'FOOD', event_date: '2022-11-20'},
@@ -9,4 +10,5 @@ movies = [
 
 movies.each do |movie|
   Movie.create!(movie)
+
 end
