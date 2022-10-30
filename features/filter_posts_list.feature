@@ -17,11 +17,11 @@ Background: posts have been added to database
 
 Scenario: restrict to posts with type "merch"
   Given I check the following types: merch
-  And I uncheck the following ratings: food, other
+  And I uncheck the following types: food, other
   And I press "Refresh"
   Then I should see the following posts: Waterbottles on Lerner Ramps
   Then I should not see the following posts: Mochi Mingle, Pojangmacha
 
 Scenario: all types selected
-  Given I check the following ratings: food, merch, other
+  Given I check the following types: food, merch, other
   Then I should see all the posts
