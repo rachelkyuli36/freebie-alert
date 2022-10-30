@@ -3,7 +3,7 @@
 
 <%#  Part 2: Start here... %>
 
-<%= form_tag movies_path, method: :get, id: 'ratings_form' do %>
+<%= form_tag events_path, method: :get, id: 'ratings_form' do %>
   <%= hidden_field_tag 'sort_by', @sort_by %>
   Include:
   <% @all_ratings.each do |rating| %>
@@ -16,39 +16,39 @@
   <%= submit_tag 'Refresh', id: 'ratings_submit', class: 'btn btn-primary' %>
 <% end %>
 
-<table class="table table-striped col-md-12" id="movies">
+<table class="table table-striped col-md-12" id="events">
   <thead>
     <tr>
       <th>
-        <%= link_to 'Event Title', movies_path({sort_by: 'title', ratings: @ratings_to_show_hash}),
+        <%= link_to 'Event Title', events_path({sort_by: 'title', ratings: @ratings_to_show_hash}),
                       id: 'title_header', class: ('bg-warning hilite' if @sort_by == 'title') %>
       </th>
       <th>Type</th>
       <th>
         <%= link_to 'Event Date',
-              movies_path({sort_by: 'event_date', ratings: @ratings_to_show_hash}),
+              events_path({sort_by: 'event_date', ratings: @ratings_to_show_hash}),
               id: 'event_date_header', class: ('bg-warning hilite' if @sort_by == 'event_date') %>
       </th>
       <th>More Info</th>
     </tr>
   </thead>
   <tbody>
-    <% @movies.each do |movie| %>
+    <% @events.each do |event| %>
       <tr>
         <td>
-          <%= movie.title %>
+          <%= event.title %>
         </td>
         <td>
-          <%= movie.rating %>
+          <%= event.rating %>
         </td>
         <td>
-          <%= movie.event_date %>
+          <%= event.event_date %>
         </td>
         <td>
-          <%= link_to "More about #{movie.title}", movie_path(movie) %>
+          <%= link_to "More about #{event.title}", event_path(event) %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Add new movie', new_movie_path, class: 'btn btn-primary' %>
+<%= link_to 'Add new event', new_event_path, class: 'btn btn-primary' %>

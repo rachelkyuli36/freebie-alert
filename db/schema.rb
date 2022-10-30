@@ -13,11 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20111119180638) do
 
-  create_table "movies", force: :cascade do |t|
+  create_table "events", force: :cascade do |t|
     t.string   "title"
     t.string   "rating"
     t.text     "description"
-    t.text     "affiliation"
     t.datetime "event_date"
     t.datetime "created_at"
     t.datetime "updated_at"

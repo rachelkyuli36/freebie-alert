@@ -1,4 +1,4 @@
-class Movie < ActiveRecord::Base
+class Event < ActiveRecord::Base
   def self.all_ratings
     ['Food', 'Merch', 'Other']
   end
