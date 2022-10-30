@@ -14,7 +14,7 @@ Background: movies have been added to database
 
 
   And I am on the FreebieAlert home page
-  Then 4 seed movies should exist
+  Then 4 seed posts should exist
 
 Scenario: sort movies in decreasing order of event date
   When I follow "Release Date"

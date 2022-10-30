@@ -13,7 +13,7 @@ Background: posts have been added to database
   | Pojangmacha                  | Food  | 2022-11-03 | 2022-10-27  |
 
   And  I am on the FreeAlert home page
-  Then 1 seed post should exist
+  Then 3 seed posts should exist
 
 Scenario: restrict to posts with type "merch"
   Given I check the following types: merch
