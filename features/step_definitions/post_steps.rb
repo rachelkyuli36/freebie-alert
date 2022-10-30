@@ -75,3 +75,7 @@ Then /complete the rest of of this scenario/ do
   # the line in your scenarios with the appropriate steps.
   fail "Remove this step from your .feature files"
 end
+
+Then /the event date of "(.*)" should be "(.*)"/ do |t, d|
+  expect Post.find_by_title(t).event_date == d
+end
