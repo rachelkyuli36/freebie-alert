@@ -14,3 +14,7 @@ Branch to grade: iteration1
 
 `git checkout iteration1`
 
+`bundle install --without production`
+
+`bin/rake db:setup`
+
