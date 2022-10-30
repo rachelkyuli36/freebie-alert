@@ -3,10 +3,10 @@
 <%= form_tag events_path, class: 'form' do %>
   <%= label :event, :title, 'Title', class: 'col-form-label' %>
   <%= text_field :event, :title, class: 'form-control' %>
-  <%= label :event, :rating, 'Rating', class: 'col-form-label' %>
-  <%= select :event, :rating, ['G','PG','PG-13','R'], {}, {class: 'form-control col-1'} %>
-  <%= label :event, :release_date, 'Released On', class: 'col-form-label' %>
-  <%= date_select :event, :release_date, {}, class: 'form-control col-2 d-inline' %>
+  <%= label :event, :rating, 'Type', class: 'col-form-label' %>
+  <%= select :event, :rating, ['FOOD', 'MERCH', 'OTHER], {}, {class: 'form-control col-1'} %>
+  <%= label :event, :event_date, 'Event On', class: 'col-form-label' %>
+  <%= date_select :event, :event_date, {}, class: 'form-control col-2 d-inline' %>
   <br/>
   <%= submit_tag 'Save Changes', class: 'btn btn-primary' %>
   <%= link_to 'Cancel', events_path, class: 'btn btn-secondary' %>

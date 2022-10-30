@@ -1,7 +1,8 @@
 class Event < ActiveRecord::Base
   def self.all_ratings
-    ['Food', 'Merch', 'Other']
+    ['FOOD', 'MERCH', 'OTHER']
   end
+
   def self.with_ratings(ratings, sort_by)
     if ratings.nil?
       all.order sort_by

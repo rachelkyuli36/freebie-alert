@@ -12,16 +12,16 @@ Background: events have been added to database
   | Mochi Mingle                 | FOOD    | 2022-11-20 |
   | Pojangmacha                  | FOOD    | 2022-11-03 |
 
-  And  I am on the FreeAlert home page
+  And  I am on the FreebieAlert home page
   Then 3 seed events should exist
 
-Scenario: restrict to events with type "merch"
-  Given I check the following types: merch
-  And I uncheck the following types: food, other
+Scenario: restrict to events with type "MERCH"
+  Given I check the following types: MERCH
+  And I uncheck the following types: FOOD, OTHER
   And I press "Refresh"
   Then I should see the following events: Waterbottles on Lerner Ramps
   Then I should not see the following events: Mochi Mingle, Pojangmacha
 
 Scenario: all types selected
-  Given I check the following types: food, merch, other
+  Given I check the following types: FOOD, MERCH, OTHER
   Then I should see all the events

@@ -11,6 +11,9 @@ Background: events have been added to database
   | Waterbottles on Lerner Ramps | MERCH   | 2020-10-19 |
   | Mochi Mingle                 | FOOD    | 2022-11-20 |
   | Pojangmacha                  | FOOD    | 2022-11-03 |
+  
+  And  I am on the FreebieAlert home page
+  Then 3 seed events should exist
 
 Scenario: change event date of existing event
   When I go to the edit page for "Mochi Mingle"
