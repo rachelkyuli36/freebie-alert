@@ -3,13 +3,13 @@ describe MoviesController, :type => :controller do
   before (:all) do
     if Movie.where(:director => "Ruth Lee").empty?
       Movie.create(:title => "Clash of Clan", :director => "Ruth Lee",
-                   :rating => "PG-13", :release_date => "2022-06-12")
+                   :freebie => "PG-13", :release_date => "2022-06-12")
       Movie.create(:title => "Pride and Prejudice", :director => "Ruth Lee",
-                   :rating => "R", :release_date => "2022-12-12")
+                   :freebie => "R", :release_date => "2022-12-12")
     end
     if Movie.where(:title => "Gilmore Girls").empty?
       Movie.create(:title => "Gilmore Girls",
-                   :rating => "PG", :release_date => "2012-03-05")
+                   :freebie => "PG", :release_date => "2012-03-05")
     end
   end
   describe "find movies with similar director" do
@@ -28,7 +28,7 @@ describe MoviesController, :type => :controller do
   describe "creating a movie" do
     it "redirects to home page after movie is created" do
       get :create, {:movie => {"title" => "Princess Diaries", :director => "Steven Spiel",
-      :rating => "PG", :release_date => "2022-06-12"}}
+      :freebie => "PG", :release_date => "2022-06-12"}}
       expect(response).to redirect_to('/movies')
     end
   end
@@ -36,7 +36,7 @@ describe MoviesController, :type => :controller do
   describe "destroying a movie" do
     it "redirects to home page after movie is destroyed" do
       Movie.create(:id => 12, :title => "Gilmore Girls 2",
-                   :rating => "PG-13", :release_date => "2002-03-05")
+                   :freebie => "PG-13", :release_date => "2002-03-05")
       get :destroy, {:id => 12}
       expect(response).to redirect_to('/movies')
     end
@@ -44,8 +44,8 @@ describe MoviesController, :type => :controller do
   describe "updating a movie" do
     it "redirects to home page after movie is updated" do
       Movie.create(:id => 12, :title => "Gilmore Girls 2",
-                   :rating => "PG-13", :release_date => "2002-03-05")
-      get :update, id: 12, movie:{"title" => "Updated Gilmore", "rating" => "PG"} 
+                   :freebie => "PG-13", :release_date => "2002-03-05")
+      get :update, id: 12, movie:{"title" => "Updated Gilmore", "freebie" => "PG"} 
       expect(response).to redirect_to('/movies/12')
       expect(Movie.find_by(id: 12).title).to eq("Updated Gilmore")
     end

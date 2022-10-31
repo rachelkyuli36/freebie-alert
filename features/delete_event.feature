@@ -7,7 +7,7 @@ Feature: Delete an event
 Background: events have been added to database
 
   Given the following events exist:
-  | title                        | rating  | event_date |
+  | title                        | freebie  | event_date |
   | Waterbottles on Lerner Ramps | MERCH   | 2020-10-19 |
   | Mochi Mingle                 | FOOD    | 2022-11-20 |
   | Pojangmacha                  | FOOD    | 2022-11-03 |

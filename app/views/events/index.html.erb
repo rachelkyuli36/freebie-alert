@@ -3,30 +3,30 @@
 
 <%#  Part 2: Start here... %>
 
-<%= form_tag events_path, method: :get, id: 'ratings_form' do %>
+<%= form_tag events_path, method: :get, id: 'freebies_form' do %>
   <%= hidden_field_tag 'sort_by', @sort_by %>
   Include:
-  <% @all_ratings.each do |rating| %>
+  <% @all_freebies.each do |freebie| %>
     <div class="form-check  form-check-inline">
-      <%= label_tag "ratings[#{rating}]", rating, class: 'form-check-label' %>
-      <%= check_box_tag "ratings[#{rating}]", '1', (@ratings_to_show_hash.include?(rating)),
+      <%= label_tag "freebies[#{freebie}]", freebie, class: 'form-check-label' %>
+      <%= check_box_tag "freebies[#{freebie}]", '1', (@freebies_to_show_hash.include?(freebie)),
         class: 'form-check-input' %>
     </div>
   <% end %>
-  <%= submit_tag 'Refresh', id: 'ratings_submit', class: 'btn btn-primary' %>
+  <%= submit_tag 'Refresh', id: 'freebies_submit', class: 'btn btn-primary' %>
 <% end %>
 
 <table class="table table-striped col-md-12" id="events">
   <thead>
     <tr>
       <th>
-        <%= link_to 'Event Title', events_path({sort_by: 'title', ratings: @ratings_to_show_hash}),
+        <%= link_to 'Event Title', events_path({sort_by: 'title', freebies: @freebies_to_show_hash}),
                       id: 'title_header', class: ('bg-warning hilite' if @sort_by == 'title') %>
       </th>
       <th>Type</th>
       <th>
         <%= link_to 'Event Date',
-              events_path({sort_by: 'event_date', ratings: @ratings_to_show_hash}),
+              events_path({sort_by: 'event_date', freebies: @freebies_to_show_hash}),
               id: 'event_date_header', class: ('bg-warning hilite' if @sort_by == 'event_date') %>
       </th>
       <th>Time</th>
@@ -41,7 +41,7 @@
           <%= event.title %>
         </td>
         <td>
-          <%= event.rating %>
+          <%= event.freebie %>
         </td>
         <td>
           <%= event.event_date %>

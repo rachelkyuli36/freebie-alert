@@ -8,12 +8,12 @@ class EventsController < ApplicationController
   end
 
   def index
-    @all_ratings = Event.all_ratings
-    @events = Event.with_ratings(ratings_list, sort_by)
-    @ratings_to_show_hash = ratings_hash
+    @all_freebies = Event.all_freebies
+    @events = Event.with_freebies(freebies_list, sort_by)
+    @freebies_to_show_hash = freebies_hash
     @sort_by = sort_by
     # remember the correct settings for next time
-    session['ratings'] = ratings_list
+    session['freebies'] = freebies_list
     session['sort_by'] = @sort_by
   end
 
@@ -48,19 +48,19 @@ class EventsController < ApplicationController
   private
 
   def force_index_redirect
-    if !params.key?(:ratings) || !params.key?(:sort_by)
+    if !params.key?(:freebies) || !params.key?(:sort_by)
       flash.keep
-      url = events_path(sort_by: sort_by, ratings: ratings_hash)
+      url = events_path(sort_by: sort_by, freebies: freebies_hash)
       redirect_to url
     end
   end
 
-  def ratings_list
-    params[:ratings]&.keys || session[:ratings] || Event.all_ratings
+  def freebies_list
+    params[:freebies]&.keys || session[:freebies] || Event.all_freebies
   end
 
-  def ratings_hash
-    Hash[ratings_list.collect { |item| [item, "1"] }]
+  def freebies_hash
+    Hash[freebies_list.collect { |item| [item, "1"] }]
   end
 
   def sort_by
