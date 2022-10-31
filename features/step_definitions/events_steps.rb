@@ -4,7 +4,7 @@ Given /the following events exist/ do |events_table|
   events_table.hashes.each do |event|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
-    Event.create(:title => event['title'], :rating => event['rating'], :event_date => event['event_date'])
+    Event.create(:title => event['title'], :freebie => event['freebie'], :event_date => event['event_date'])
   end
   #pending "Fill in this step in movie_steps.rb"
 end
@@ -23,16 +23,16 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
 end
 
 # Make it easier to express checking or unchecking several boxes at once
-#  "When I uncheck the following ratings: PG, G, R"
-#  "When I check the following ratings: G"
+#  "When I uncheck the following freebies: PG, G, R"
+#  "When I check the following freebies: G"
 
-When /I (un)?check the following types: (.*)/ do |uncheck, ratings_list|
-  # HINT: use String#split to split up the rating_list, then
-  #   iterate over the ratings and reuse the "When I check..." or
+When /I (un)?check the following types: (.*)/ do |uncheck, freebies_list|
+  # HINT: use String#split to split up the freebie_list, then
+  #   iterate over the freebies and reuse the "When I check..." or
   #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
-  ratings = ratings_list.split(', ')
-  ratings.each do |rating|
-    uncheck ? uncheck(rating) : check(rating)
+  freebies = freebies_list.split(', ')
+  freebies.each do |freebie|
+    uncheck ? uncheck(freebie) : check(freebie)
   end
 end
 
