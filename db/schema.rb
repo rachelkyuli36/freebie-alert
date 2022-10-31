@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(version: 20221030220816) do
 
   create_table "events", force: :cascade do |t|
-    t.string   "title"
-    t.string   "rating"
-    t.text     "description"
-    t.datetime "event_date"
-    t.text     "event_time"
-    t.text     "affiliation"
+    t.string "title"
+    t.string "rating"
+    t.text   "description"
+    t.date   "event_date"
+    t.string "event_time"
+    t.text   "affiliation"
   end
 
 end

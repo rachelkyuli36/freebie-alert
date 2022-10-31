@@ -4,8 +4,8 @@ class CreateEvents < ActiveRecord::Migration
       t.string :title
       t.string :rating
       t.text :description
-      t.datetime :event_date
-      t.text :event_time
+      t.date :event_date
+      t.string :event_time
       t.text :affiliation
     end
   end
