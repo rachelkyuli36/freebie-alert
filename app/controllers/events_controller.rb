@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.create!(events_path)
+    @event = Event.create!(event_params)
     flash[:notice] = "#{@event.title} was successfully created."
     redirect_to events_path
   end
@@ -47,7 +47,7 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:title, :rating, :event_date, :event_time, :affiliation)
+    params.require(:event).permit(:title, :freebie, :event_date, :event_time, :affiliation)
   end
 
   def force_index_redirect
