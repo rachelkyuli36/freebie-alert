@@ -11,37 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20111119180638) do
+ActiveRecord::Schema.define(version: 20221030220816) do
 
-  create_table "movies", force: :cascade do |t|
+  create_table "events", force: :cascade do |t|
     t.string   "title"
     t.string   "rating"
     t.text     "description"
-    t.text     "affiliation"
     t.datetime "event_date"
     t.text     "event_time"
+    t.text     "affiliation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "post", force: :cascade do |t|
-    t.string   "title"
-    t.string   "rating"
-    t.text     "description"
-    t.text     "affiliation"
-    t.datetime "event_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  # create_table "post", force: :cascade do |t|
+  #   t.string   "title"
+  #   t.string   "rating"
+  #   t.text     "description"
+  #   t.text     "affiliation"
+  #   t.datetime "event_date"
+  #   t.datetime "created_at"
+  #   t.datetime "updated_at"
+  # end
 
-  create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.string   "rating"
-    t.text     "description"
-    t.text     "affiliation"
-    t.datetime "event_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  # create_table "posts", force: :cascade do |t|
+  #   t.string   "title"
+  #   t.string   "rating"
+  #   t.text     "description"
+  #   t.text     "affiliation"
+  #   t.datetime "event_date"
+  #   t.datetime "created_at"
+  #   t.datetime "updated_at"
+
+  # end
 
 end

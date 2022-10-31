@@ -6,16 +6,15 @@ Feature: display list of events sorted by different criteria
 
 Background: movies have been added to database
 
-  Given the following posts exist:
-  | title                        | type  | event_date | date_posted |
-  | Waterbottles on Lerner Ramps | Merch | 2020-10-19 | 2020-10-19  |
-  | Mochi Mingle                 | Food  | 2022-11-20 | 2022-10-27  |
-  | Pojangmacha                  | Food  | 2022-11-03 | 2022-10-27  |
+  Given the following events exist:
+  | title                        | rating  | event_date |
+  | Waterbottles on Lerner Ramps | MERCH   | 2020-10-19 |
+  | Mochi Mingle                 | FOOD    | 2022-11-20 |
+  | Pojangmacha                  | FOOD    | 2022-11-03 |
 
-
-  And I am on the FreebieAlert home page
-  Then 4 seed posts should exist
+  And  I am on the FreebieAlert home page
+  Then 3 seed events should exist
 
 Scenario: sort movies in decreasing order of event date
-  When I follow "Release Date"
+  When I follow "Event Date"
   Then I should see "Mochi Mingle" before "Waterbottles on Lerner Ramps"

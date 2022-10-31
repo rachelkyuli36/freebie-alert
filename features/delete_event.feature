@@ -1,4 +1,4 @@
-Feature: Edit an event
+Feature: Delete an event
 
   As a student user
   So that I can edit an event
@@ -17,6 +17,5 @@ Background: events have been added to database
 
 Scenario: change event date of existing event
   When I go to the edit page for "Mochi Mingle"
-  And I fill in "Event Date" with "2022-12-02"
-  And I press "Update Event"
-  Then the event date of "Mochi Mingle" should be "2022-12-02"
+  And I press "Delete"
+  Then I should see "Event 'Mochi Mingle' deleted."
