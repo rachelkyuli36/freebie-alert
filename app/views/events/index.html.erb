@@ -29,6 +29,8 @@
               events_path({sort_by: 'event_date', ratings: @ratings_to_show_hash}),
               id: 'event_date_header', class: ('bg-warning hilite' if @sort_by == 'event_date') %>
       </th>
+      <th>Time</th>
+      <th>Affiliation</th>
       <th>More Info</th>
     </tr>
   </thead>
@@ -45,10 +47,16 @@
           <%= event.event_date %>
         </td>
         <td>
+          <%= event.event_time %>
+        </td>
+        <td>
+          <%= event.affiliation %>
+        </td>
+        <td>
           <%= link_to "More about #{event.title}", event_path(event) %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Add new event', new_event_path, class: 'btn btn-primary' %>
+<%= link_to 'Add new event', new_event_path, class: 'btn btn-warning' %>
