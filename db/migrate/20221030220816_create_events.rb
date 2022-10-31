@@ -5,6 +5,8 @@ class CreateEvents < ActiveRecord::Migration
       t.string :rating
       t.text :description
       t.datetime :event_date
+      t.text :event_time
+      t.text :affiliation
     end
   end
 

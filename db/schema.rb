@@ -20,29 +20,6 @@ ActiveRecord::Schema.define(version: 20221030220816) do
     t.datetime "event_date"
     t.text     "event_time"
     t.text     "affiliation"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
-
-  # create_table "post", force: :cascade do |t|
-  #   t.string   "title"
-  #   t.string   "rating"
-  #   t.text     "description"
-  #   t.text     "affiliation"
-  #   t.datetime "event_date"
-  #   t.datetime "created_at"
-  #   t.datetime "updated_at"
-  # end
-
-  # create_table "posts", force: :cascade do |t|
-  #   t.string   "title"
-  #   t.string   "rating"
-  #   t.text     "description"
-  #   t.text     "affiliation"
-  #   t.datetime "event_date"
-  #   t.datetime "created_at"
-  #   t.datetime "updated_at"
-
-  # end
 
 end
