@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.create!(event_params)
+    @event = Event.create!(events_path)
     flash[:notice] = "#{@event.title} was successfully created."
     redirect_to events_path
   end
