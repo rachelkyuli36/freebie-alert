@@ -16,6 +16,6 @@ Background: events have been added to database
   Then 3 seed events should exist
 
 Scenario: change event date of existing event
-  When I go to the edit page for "Mochi Mingle"
+  When I go to the show page for "Mochi Mingle"
   And I press "Delete"
   Then I should see "Event 'Mochi Mingle' deleted."
