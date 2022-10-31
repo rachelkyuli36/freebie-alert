@@ -46,6 +46,9 @@ class EventsController < ApplicationController
   end
 
   private
+  def event_params
+    params.require(:event).permit(:title, :rating, :event_date, :event_time, :affiliation)
+  end
 
   def force_index_redirect
     if !params.key?(:ratings) || !params.key?(:sort_by)
