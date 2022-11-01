@@ -17,6 +17,8 @@ module NavigationHelpers
     when /^the events page$/ then '/events'
     when /^the show page for "(.*)"$/
       event_path(Event.find_by(title: $1).id)
+    when /^the edit page for "(.*)"$/
+      edit_event_path(Event.find_by(title: $1).id)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
