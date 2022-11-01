@@ -3,9 +3,9 @@ Freebie Alert is a web app where students can share information about giveaways/
 
 
 ## Info
-Ruby version: 3.1.2
+Ruby version: 2.6.6
 
-Machine OS: Mac
+Machine OS: 
 
 Branch to grade: iteration1
 
