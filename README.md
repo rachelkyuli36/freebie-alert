@@ -9,7 +9,7 @@ Machine OS: Mac
 
 Branch to grade: iteration1
 
-## How to run the app
+## Clone and set up the app
 `git clone https://github.com/rachelkyuli36/freebie-alert.git`
 
 `git checkout iteration1`
@@ -18,5 +18,6 @@ Branch to grade: iteration1
 
 `bin/rake db:setup`
 
+## Run the app
 
 ## Heroku
